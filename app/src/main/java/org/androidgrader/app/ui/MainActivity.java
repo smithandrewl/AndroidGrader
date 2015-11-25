@@ -1,4 +1,4 @@
-package org.androidgrader.app;
+package org.androidgrader.app.ui;
 
 import java.util.Locale;
 
@@ -14,6 +14,10 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import org.androidgrader.app.R;
+import org.androidgrader.app.ui.fragments.TagsFragment;
+import org.androidgrader.app.ui.fragments.GradeFragment;
+import org.androidgrader.app.ui.fragments.HoursFragment;
 
 public class MainActivity extends Activity implements ActionBar.TabListener, GradeFragment.OnFragmentInteractionListener, HoursFragment.OnFragmentInteractionListener, TagsFragment.OnFragmentInteractionListener {
 

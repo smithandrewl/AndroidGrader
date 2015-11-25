@@ -1,4 +1,4 @@
-package org.androidgrader.app;
+package org.androidgrader.app.ui.fragments;
 
 import android.app.Activity;
 import android.net.Uri;
@@ -7,6 +7,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import org.androidgrader.app.R;
 
 
 /**

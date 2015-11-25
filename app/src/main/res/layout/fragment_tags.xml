@@ -2,7 +2,7 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context="org.androidgrader.app.TagsFragment">
+             tools:context="org.androidgrader.app.ui.fragments.TagsFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
