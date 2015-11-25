@@ -139,7 +139,7 @@ public class MainActivity extends Activity implements ActionBar.TabListener, Gra
                 case 2:
                     return TagsFragment.newInstance("param1", "param2");
                 default:
-                    return GradeFragment.newInstance("param1", "param2");
+                    return GradeFragment.newInstance();
 
 
             }
