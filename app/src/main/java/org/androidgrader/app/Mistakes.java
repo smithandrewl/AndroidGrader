@@ -9,37 +9,7 @@ public class Mistakes {
     private int normal;
     private int tiny;
 
-    public void incEntire() {
-        entire++;
-    }
 
-    public void decEntire() {
-        entire--;
-    }
-
-    public void incHuge() {
-        huge++;
-    }
-
-    public void decHuge() {
-        huge--;
-    }
-
-    public void incNormal() {
-        normal++;
-    }
-
-    public void decNormal() {
-        normal--;
-    }
-
-    public void incTiny() {
-        tiny++;
-    }
-
-    public void decTiny() {
-        tiny--;
-    }
 
     public int getEntire() {
         return entire;
@@ -55,5 +25,21 @@ public class Mistakes {
 
     public int getTiny() {
         return tiny;
+    }
+
+    public void setEntire(int entire) {
+        this.entire = entire;
+    }
+
+    public void setHuge(int huge) {
+        this.huge = huge;
+    }
+
+    public void setNormal(int normal) {
+        this.normal = normal;
+    }
+
+    public void setTiny(int tiny) {
+        this.tiny = tiny;
     }
 }

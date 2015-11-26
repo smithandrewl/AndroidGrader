@@ -9,7 +9,7 @@ public class Assignment {
 
     public Assignment() {
         questions = 10;
-        points    = 10;
+        points = 10;
     }
 
     public GradingKey getGradingKey() {
@@ -24,19 +24,13 @@ public class Assignment {
         return points;
     }
 
-    public void incQuestions() {
-        questions++;
+    public void setQuestions(int questions) {
+        this.questions = questions;
     }
 
-    public void decQuestions() {
-        questions--;
-    }
-
-    public void incPoints() {
-        points++;
-    }
-
-    public void decPoints() {
-        points--;
+    public void setPoints(int points) {
+        this.points = points;
     }
 }
+
+

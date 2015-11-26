@@ -9,8 +9,9 @@ public class Submission {
 
     public Submission() {
         assignment = new Assignment();
-        mistakes   = new Mistakes();
+        mistakes = new Mistakes();
     }
+
 
     public float grade() {
         GradingKey gradingKey = assignment.getGradingKey();
@@ -29,43 +30,29 @@ public class Submission {
         return assignment.getGradingKey();
     }
 
-    public void incQuestions() {
-        assignment.incQuestions();
+    public void setEntireMistakes(int count) {
+        mistakes.setEntire(count);
     }
 
-    public void decQuestions() {
-        assignment.decQuestions();
+    public void setHugeMistakes(int count) {
+        mistakes.setHuge(count);
     }
 
-    public void incEntireMistakes() {
-        mistakes.incEntire();
+    public void setNormalMistakes(int count) {
+        mistakes.setNormal(count);
     }
 
-    public void decEntireMistakes() {
-        mistakes.decEntire();
+    public void setTinyMistakes(int count) {
+        mistakes.setTiny(count);
     }
 
-    public void incHugeMistakes() {
-        mistakes.incHuge();
+    public void setQuestions(int count) {
+        assignment.setQuestions(count);
     }
 
-    public void decHugeMistakes() {
-        mistakes.decHuge();
+    public void setPoints(int points) {
+        assignment.setPoints(points);
     }
 
-    public void incNormalMistakes() {
-        mistakes.incNormal();
-    }
 
-    public void decNormalMistakes() {
-        mistakes.decNormal();
-    }
-
-    public void incTiny() {
-        mistakes.incTiny();
-    }
-
-    public void decTiny() {
-        mistakes.decTiny();
-    }
 }
