@@ -6,10 +6,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.NumberPicker;
-import android.widget.TextView;
+import android.widget.*;
+import org.androidgrader.app.GradingKey;
 import org.androidgrader.app.R;
 import org.androidgrader.app.Submission;
 
@@ -96,6 +94,13 @@ public class GradeFragment extends Fragment {
         btnNext  = (Button)      view.findViewById(R.id.btnNext);
         btnInfo  = (ImageButton) view.findViewById(R.id.btnInfo);
 
+        btnInfo.setOnClickListener(v -> {
+            GradingKey key = submission.getGradingKey();
+            String format = "Entire = %.2f, Huge = %.2f, Normal = %.2f, Tiny = %.2f";
+
+            String msg = String.format(format, key.getEntireWorth(), key.getHugeWorth(), key.getNormalWorth(), key.getTinyWorth());
+            Toast.makeText(getActivity().getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+        });
         submission = new Submission();
 
         update();
@@ -107,7 +112,6 @@ public class GradeFragment extends Fragment {
             submission.setTinyMistakes(0);
 
             updateView();
-
         });
 
         return view;
