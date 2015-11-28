@@ -12,7 +12,6 @@ public class Submission {
         mistakes = new Mistakes();
     }
 
-
     public float grade() {
         GradingKey gradingKey = assignment.getGradingKey();
 
@@ -24,6 +23,14 @@ public class Submission {
         float totalPenalty = penaltyForEntire + penaltyForHuge + penaltyForNormal + penaltyForTiny;
 
         return assignment.getPoints() - totalPenalty;
+    }
+
+    public int getQuestions() {
+        return assignment.getQuestions();
+    }
+
+    public int getPoints() {
+        return assignment.getPoints();
     }
 
     public GradingKey getGradingKey() {
@@ -45,6 +52,11 @@ public class Submission {
     public void setTinyMistakes(int count) {
         mistakes.setTiny(count);
     }
+
+    public int getEntireMistakes() { return mistakes.getEntire();}
+    public int getHugeMistakes() { return mistakes.getHuge();}
+    public int getNormalMistakes() { return mistakes.getNormal();}
+    public int getTinyMistakes() { return mistakes.getTiny();}
 
     public void setQuestions(int count) {
         assignment.setQuestions(count);

@@ -84,6 +84,8 @@ public class GradeFragment extends Fragment {
         for(NumberPicker numberPicker : numberPickers) {
             numberPicker.setMinValue(0);
             numberPicker.setMaxValue(100);
+
+            numberPicker.setOnValueChangedListener((picker, oldVal, newVal) -> update());
         }
 
         npPoints.setValue(10);
@@ -96,40 +98,7 @@ public class GradeFragment extends Fragment {
 
         submission = new Submission();
 
-        updateScore();
-
-        npItems.setOnValueChangedListener((picker, oldVal, newVal) -> {
-            submission.setQuestions(newVal);
-
-            updateScore();
-        });
-
-        npPoints.setOnValueChangedListener((picker, oldVal, newVal) -> {
-            submission.setPoints(newVal);
-            updateScore();
-        });
-
-
-        npEntire.setOnValueChangedListener((picker, oldVal, newVal) -> {
-            submission.setEntireMistakes(newVal);
-            updateScore();
-        });
-
-        npHuge.setOnValueChangedListener((picker, oldVal, newVal) -> {
-            submission.setHugeMistakes(newVal);
-            updateScore();
-        });
-
-        npNormal.setOnValueChangedListener((picker, oldVal, newVal) -> {
-
-            submission.setNormalMistakes(newVal);
-            updateScore();
-        });
-
-        npTiny.setOnValueChangedListener((picker, oldVal, newVal) -> {
-            submission.setTinyMistakes(newVal);
-            updateScore();
-        });
+        update();
 
         btnNext.setOnClickListener(v -> {
             submission.setEntireMistakes(0);
@@ -137,24 +106,45 @@ public class GradeFragment extends Fragment {
             submission.setNormalMistakes(0);
             submission.setTinyMistakes(0);
 
-            npEntire.setValue(0);
-            npHuge.setValue(0);
-            npNormal.setValue(0);
-            npTiny.setValue(0);
-
-            updateScore();
+            updateView();
 
         });
 
         return view;
     }
 
-    private void updateScore() {
-        float score = submission.grade() / npPoints.getValue();
-        lblScore.setText(String.format("%.2f%%", Math.max(0, Math.min(100, score * 100))));
+    private void updateModel() {
+        int entireMistakes = npEntire.getValue();
+        int hugeMistakes   = npHuge.getValue();
+        int normalMistakes = npNormal.getValue();
+        int tinyMistakes   = npTiny.getValue();
 
+        submission.setQuestions(npItems.getValue());
+        submission.setPoints(npPoints.getValue());
+        submission.setEntireMistakes(entireMistakes);
+        submission.setHugeMistakes(hugeMistakes);
+        submission.setNormalMistakes(normalMistakes);
+        submission.setTinyMistakes(tinyMistakes);
 
     }
+
+    private void updateView() {
+        npItems.setValue(submission.getQuestions());
+        npPoints.setValue(submission.getPoints());
+        npEntire.setValue(submission.getEntireMistakes());
+        npHuge.setValue(submission.getHugeMistakes());
+        npNormal.setValue(submission.getNormalMistakes());
+        npTiny.setValue(submission.getTinyMistakes());
+
+        float score = submission.grade() / (float) submission.getPoints();
+        lblScore.setText(String.format("%.2f%%", Math.max(0, Math.min(100, score * 100))));
+    }
+
+    private void update() {
+        updateModel();
+        updateView();
+    }
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
