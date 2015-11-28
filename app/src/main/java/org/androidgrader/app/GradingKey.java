@@ -16,6 +16,7 @@ public class GradingKey {
             tinyWorth   = entireWorth * .125f;
         }
     }
+
     public float getEntireWorth() {
         return entireWorth;
     }

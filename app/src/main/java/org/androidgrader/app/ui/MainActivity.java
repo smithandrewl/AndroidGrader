@@ -17,19 +17,8 @@ import java.util.Locale;
 
 public class MainActivity extends Activity implements ActionBar.TabListener, GradeFragment.OnFragmentInteractionListener, HoursFragment.OnFragmentInteractionListener, TagsFragment.OnFragmentInteractionListener {
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v13.app.FragmentStatePagerAdapter}.
-     */
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
     private ViewPager mViewPager;
 
     @Override
@@ -72,10 +61,8 @@ public class MainActivity extends Activity implements ActionBar.TabListener, Gra
         }
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -97,8 +84,6 @@ public class MainActivity extends Activity implements ActionBar.TabListener, Gra
 
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        // When the given tab is selected, switch to the corresponding page in
-        // the ViewPager.
         mViewPager.setCurrentItem(tab.getPosition());
     }
 
@@ -115,10 +100,6 @@ public class MainActivity extends Activity implements ActionBar.TabListener, Gra
         Log.d("Main",uri.toString());
     }
 
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -126,24 +107,18 @@ public class MainActivity extends Activity implements ActionBar.TabListener, Gra
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-
             switch (position) {
                 case 1:
-                    return HoursFragment.newInstance("param1", "param2");
+                    return HoursFragment.newInstance();
                 case 2:
-                    return TagsFragment.newInstance("param1", "param2");
+                    return TagsFragment.newInstance();
                 default:
                     return GradeFragment.newInstance();
-
-
             }
         }
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
             return 3;
         }
 

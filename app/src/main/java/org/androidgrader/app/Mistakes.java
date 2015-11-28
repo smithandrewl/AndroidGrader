@@ -6,8 +6,6 @@ public class Mistakes {
     private int normal;
     private int tiny;
 
-
-
     public int getEntire() {
         return entire;
     }

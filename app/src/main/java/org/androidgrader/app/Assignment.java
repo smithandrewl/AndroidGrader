@@ -6,7 +6,7 @@ public class Assignment {
 
     public Assignment() {
         questions = 10;
-        points = 10;
+        points    = 10;
     }
 
     public GradingKey getGradingKey() {
