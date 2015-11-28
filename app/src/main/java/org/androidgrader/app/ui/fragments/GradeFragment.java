@@ -142,6 +142,38 @@ public class GradeFragment extends Fragment {
     }
 
     @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        if(savedInstanceState != null) {
+            submission.setEntireMistakes(savedInstanceState.getInt("EntireMistakes"));
+            submission.setHugeMistakes(savedInstanceState.getInt("HugeMistakes"));
+            submission.setNormalMistakes(savedInstanceState.getInt("NormalMistakes"));
+            submission.setTinyMistakes(savedInstanceState.getInt("TinyMistakes"));
+
+            submission.setQuestions(savedInstanceState.getInt("Questions"));
+            submission.setPoints(savedInstanceState.getInt("Points"));
+        }
+
+        updateView();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("EntireMistakes", submission.getEntireMistakes());
+        outState.putInt("HugeMistakes", submission.getHugeMistakes());
+        outState.putInt("NormalMistakes", submission.getNormalMistakes());
+        outState.putInt("TinyMistakes", submission.getTinyMistakes());
+
+        outState.putInt("Questions", submission.getQuestions());
+        outState.putInt("Points", submission.getPoints());
+
+
+    }
+
+    @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
