@@ -1,15 +1,12 @@
 package org.androidgrader.app;
 
-/**
- * Created by andrew on 11/24/15.
- */
 public class Submission {
     private Assignment assignment;
     private Mistakes   mistakes;
 
     public Submission() {
         assignment = new Assignment();
-        mistakes = new Mistakes();
+        mistakes   = new Mistakes();
     }
 
     public float grade() {
@@ -53,16 +50,29 @@ public class Submission {
         mistakes.setTiny(count);
     }
 
-    public int getEntireMistakes() { return mistakes.getEntire();}
-    public int getHugeMistakes() { return mistakes.getHuge();}
-    public int getNormalMistakes() { return mistakes.getNormal();}
-    public int getTinyMistakes() { return mistakes.getTiny();}
+    public int getEntireMistakes() {
+        return mistakes.getEntire();
+    }
+
+    public int getHugeMistakes() {
+        return mistakes.getHuge();
+    }
+
+    public int getNormalMistakes() {
+        return mistakes.getNormal();
+    }
+
+    public int getTinyMistakes() {
+        return mistakes.getTiny();
+    }
 
     public void setQuestions(int count) {
+
         assignment.setQuestions(count);
     }
 
     public void setPoints(int points) {
+
         assignment.setPoints(points);
     }
 

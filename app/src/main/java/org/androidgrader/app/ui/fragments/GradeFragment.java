@@ -23,18 +23,17 @@ import org.androidgrader.app.Submission;
 public class GradeFragment extends Fragment {
     private Submission submission;
 
-    NumberPicker npPoints;
-    NumberPicker npItems;
-    NumberPicker npEntire;
-    NumberPicker npHuge;
-    NumberPicker npNormal;
-    NumberPicker npTiny;
+    private NumberPicker npPoints;
+    private NumberPicker npItems;
+    private NumberPicker npEntire;
+    private NumberPicker npHuge;
+    private NumberPicker npNormal;
+    private NumberPicker npTiny;
 
+    private TextView lblScore;
 
-    TextView lblScore;
-
-    Button btnNext;
-    ImageButton btnInfo;
+    private Button      btnNext;
+    private ImageButton btnInfo;
 
     private OnFragmentInteractionListener mListener;
 
@@ -78,7 +77,6 @@ public class GradeFragment extends Fragment {
                 npTiny
         };
 
-
         for(NumberPicker numberPicker : numberPickers) {
             numberPicker.setMinValue(0);
             numberPicker.setMaxValue(100);
@@ -95,10 +93,17 @@ public class GradeFragment extends Fragment {
         btnInfo  = (ImageButton) view.findViewById(R.id.btnInfo);
 
         btnInfo.setOnClickListener(v -> {
-            GradingKey key = submission.getGradingKey();
-            String format = "Entire = %.2f, Huge = %.2f, Normal = %.2f, Tiny = %.2f";
+            GradingKey key    = submission.getGradingKey();
+            String     format = "Entire = %.2f, Huge = %.2f, Normal = %.2f, Tiny = %.2f";
 
-            String msg = String.format(format, key.getEntireWorth(), key.getHugeWorth(), key.getNormalWorth(), key.getTinyWorth());
+            String msg = String.format(
+                    format,
+                    key.getEntireWorth(),
+                    key.getHugeWorth(),
+                    key.getNormalWorth(),
+                    key.getTinyWorth()
+            );
+
             Toast.makeText(getActivity().getApplicationContext(), msg, Toast.LENGTH_LONG).show();
         });
         submission = new Submission();
@@ -129,7 +134,6 @@ public class GradeFragment extends Fragment {
         submission.setHugeMistakes(hugeMistakes);
         submission.setNormalMistakes(normalMistakes);
         submission.setTinyMistakes(tinyMistakes);
-
     }
 
     private void updateView() {
@@ -140,8 +144,10 @@ public class GradeFragment extends Fragment {
         npNormal.setValue(submission.getNormalMistakes());
         npTiny.setValue(submission.getTinyMistakes());
 
-        float score = submission.grade() / (float) submission.getPoints();
-        lblScore.setText(String.format("%.2f%%", Math.max(0, Math.min(100, score * 100))));
+        float score        = submission.grade() / (float) submission.getPoints();
+        float clampedScore = Math.max(0, Math.min(100, score * 100));
+
+        lblScore.setText(String.format("%.2f%%", clampedScore));
     }
 
     private void update() {
@@ -177,7 +183,7 @@ public class GradeFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        public void onFragmentInteraction(Uri uri);
+        void onFragmentInteraction(Uri uri);
     }
 
 }

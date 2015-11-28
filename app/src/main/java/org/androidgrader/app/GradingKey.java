@@ -1,8 +1,5 @@
 package org.androidgrader.app;
 
-/**
- * Created by andrew on 11/24/15.
- */
 public class GradingKey {
     private float entireWorth;
     private float hugeWorth;
