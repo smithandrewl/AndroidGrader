@@ -1,23 +1,19 @@
 package org.androidgrader.app.ui;
 
-import java.util.Locale;
-
-import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.app.*;
 import android.net.Uri;
-import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
+import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import org.androidgrader.app.R;
-import org.androidgrader.app.ui.fragments.TagsFragment;
 import org.androidgrader.app.ui.fragments.GradeFragment;
 import org.androidgrader.app.ui.fragments.HoursFragment;
+import org.androidgrader.app.ui.fragments.TagsFragment;
+
+import java.util.Locale;
 
 public class MainActivity extends Activity implements ActionBar.TabListener, GradeFragment.OnFragmentInteractionListener, HoursFragment.OnFragmentInteractionListener, TagsFragment.OnFragmentInteractionListener {
 

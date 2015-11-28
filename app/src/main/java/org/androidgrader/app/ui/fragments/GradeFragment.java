@@ -71,25 +71,23 @@ public class GradeFragment extends Fragment {
         npNormal = (NumberPicker) view.findViewById(R.id.npNormal);
         npTiny   = (NumberPicker) view.findViewById(R.id.npTiny);
 
-        npPoints.setMinValue(0);
-        npPoints.setMaxValue(100);
+        NumberPicker[] numberPickers = {
+                npPoints,
+                npItems,
+                npEntire,
+                npHuge,
+                npNormal,
+                npTiny
+        };
+
+
+        for(NumberPicker numberPicker : numberPickers) {
+            numberPicker.setMinValue(0);
+            numberPicker.setMaxValue(100);
+        }
+
         npPoints.setValue(10);
-
-        npItems.setMinValue(0);
-        npItems.setMaxValue(100);
         npItems.setValue(10);
-
-        npEntire.setMinValue(0);
-        npEntire.setMaxValue(100);
-
-        npHuge.setMinValue(0);
-        npHuge.setMaxValue(100);
-
-        npNormal.setMinValue(0);
-        npNormal.setMaxValue(100);
-
-        npTiny.setMinValue(0);
-        npTiny.setMaxValue(100);
 
         lblScore = (TextView) view.findViewById(R.id.lblScore);
 
@@ -100,72 +98,52 @@ public class GradeFragment extends Fragment {
 
         updateScore();
 
-        npItems.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                submission.setQuestions(newVal);
-                updateScore();
-            }
+        npItems.setOnValueChangedListener((picker, oldVal, newVal) -> {
+            submission.setQuestions(newVal);
+
+            updateScore();
         });
 
-        npPoints.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                submission.setPoints(newVal);
-                updateScore();
-            }
+        npPoints.setOnValueChangedListener((picker, oldVal, newVal) -> {
+            submission.setPoints(newVal);
+            updateScore();
         });
 
 
-        npEntire.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                submission.setEntireMistakes(newVal);
-                updateScore();
-            }
+        npEntire.setOnValueChangedListener((picker, oldVal, newVal) -> {
+            submission.setEntireMistakes(newVal);
+            updateScore();
         });
 
-        npHuge.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                submission.setHugeMistakes(newVal);
-                updateScore();
-            }
+        npHuge.setOnValueChangedListener((picker, oldVal, newVal) -> {
+            submission.setHugeMistakes(newVal);
+            updateScore();
         });
 
-        npNormal.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+        npNormal.setOnValueChangedListener((picker, oldVal, newVal) -> {
 
-                submission.setNormalMistakes(newVal);
-                updateScore();
-            }
+            submission.setNormalMistakes(newVal);
+            updateScore();
         });
 
-        npTiny.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                submission.setTinyMistakes(newVal);
-                updateScore();
-            }
+        npTiny.setOnValueChangedListener((picker, oldVal, newVal) -> {
+            submission.setTinyMistakes(newVal);
+            updateScore();
         });
 
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                submission.setEntireMistakes(0);
-                submission.setHugeMistakes(0);
-                submission.setNormalMistakes(0);
-                submission.setTinyMistakes(0);
+        btnNext.setOnClickListener(v -> {
+            submission.setEntireMistakes(0);
+            submission.setHugeMistakes(0);
+            submission.setNormalMistakes(0);
+            submission.setTinyMistakes(0);
 
-                npEntire.setValue(0);
-                npHuge.setValue(0);
-                npNormal.setValue(0);
-                npTiny.setValue(0);
+            npEntire.setValue(0);
+            npHuge.setValue(0);
+            npNormal.setValue(0);
+            npTiny.setValue(0);
 
-                updateScore();
+            updateScore();
 
-            }
         });
 
         return view;
@@ -174,6 +152,8 @@ public class GradeFragment extends Fragment {
     private void updateScore() {
         float score = submission.grade() / npPoints.getValue();
         lblScore.setText(String.format("%.2f%%", Math.max(0, Math.min(100, score * 100))));
+
+
     }
     @Override
     public void onAttach(Activity activity) {
