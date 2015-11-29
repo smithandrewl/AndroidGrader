@@ -133,7 +133,11 @@ public class GradeFragment extends Fragment {
         float score        = submission.grade() / (float) submission.getPoints();
         float clampedScore = Math.max(0, Math.min(100, score * 100));
 
-        lblScore.setText(String.format("%.2f%%", clampedScore));
+        String percent = String.format("%.2f%%", clampedScore);
+        String numeric = String.format("%.2f", submission.grade());
+
+        String scoreText = String.format("%s / %s\n%s", numeric, submission.getPoints(), percent);
+        lblScore.setText(scoreText);
     }
 
     private void update() {

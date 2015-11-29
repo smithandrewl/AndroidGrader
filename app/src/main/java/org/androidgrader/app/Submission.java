@@ -18,8 +18,9 @@ public class Submission {
         float penaltyForTiny   = mistakes.getTiny()   * gradingKey.getTinyWorth();
 
         float totalPenalty = penaltyForEntire + penaltyForHuge + penaltyForNormal + penaltyForTiny;
+        float clampedPenalty = Math.min(totalPenalty, assignment.getPoints());
 
-        return assignment.getPoints() - totalPenalty;
+        return assignment.getPoints() - clampedPenalty;
     }
 
     public int getQuestions() {

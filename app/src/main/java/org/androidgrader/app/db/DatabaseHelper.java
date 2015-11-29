@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
 
-
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     public static final String DATABASE_NAME = "";
@@ -34,7 +33,5 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             onCreate(database, connectionSource);
         }
     }
-
-
 }
 
