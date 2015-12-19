@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 import org.androidgrader.app.R;
 import org.androidgrader.app.ui.fragments.GradeFragment;
 import org.androidgrader.app.ui.fragments.HoursFragment;
@@ -15,15 +16,15 @@ import org.androidgrader.app.ui.fragments.TagsFragment;
 
 import java.util.Locale;
 
-public class MainActivity extends Activity implements ActionBar.TabListener, GradeFragment.OnFragmentInteractionListener, HoursFragment.OnFragmentInteractionListener, TagsFragment.OnFragmentInteractionListener {
+public class MainActivity extends OrmLiteBaseActivity implements ActionBar.TabListener, GradeFragment.OnFragmentInteractionListener, HoursFragment.OnFragmentInteractionListener, TagsFragment.OnFragmentInteractionListener {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private ViewPager mViewPager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         // Set up the action bar.
@@ -110,7 +111,7 @@ public class MainActivity extends Activity implements ActionBar.TabListener, Gra
         public Fragment getItem(int position) {
             switch (position) {
                 case 1:
-                    return HoursFragment.newInstance();
+                    return ((Fragment) HoursFragment.newInstance());
                 case 2:
                     return TagsFragment.newInstance();
                 default:
