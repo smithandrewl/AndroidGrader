@@ -22,7 +22,7 @@ public final class Optional<T> {
         }
     }
 
-    static <T> Optional<T> empty() {
+    public static <T> Optional<T> empty() {
         return new Optional<T>();
     }
 
