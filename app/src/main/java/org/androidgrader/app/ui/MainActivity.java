@@ -111,7 +111,7 @@ public class MainActivity extends OrmLiteBaseActivity implements ActionBar.TabLi
         public Fragment getItem(int position) {
             switch (position) {
                 case 1:
-                    return ((Fragment) HoursFragment.newInstance());
+                    return HoursFragment.newInstance();
                 case 2:
                     return TagsFragment.newInstance();
                 default:

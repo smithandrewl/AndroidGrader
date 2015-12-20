@@ -1,19 +1,14 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
-             android:layout_height="match_parent"
+             android:layout_height="match_parent" android:layout_gravity="center"
              tools:context="org.androidgrader.app.ui.fragments.GradeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" android:layout_gravity="center">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Points:"
+                android:text="@string/points"
                 android:id="@+id/lblPoints"
                 android:layout_marginStart="26dp" android:layout_marginTop="23dp" android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"/>
@@ -21,7 +16,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Items:"
+                android:text="@string/items"
                 android:id="@+id/lblItems" android:layout_alignTop="@+id/lblPoints" android:layout_alignParentEnd="true"
                 android:layout_marginEnd="26dp" android:layout_toEndOf="@+id/textView5"/>
         <NumberPicker
@@ -38,14 +33,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="#Mistakes:"
+                android:text="@string/mistakes"
                 android:id="@+id/textView5"
                 android:layout_below="@+id/npPoints" android:layout_alignEnd="@+id/lblScore"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Entire"
+                android:text="@string/entire"
                 android:id="@+id/lblEntire"
                 android:layout_below="@+id/textView5" android:layout_alignStart="@+id/npPoints"
                 android:layout_alignEnd="@+id/npPoints"/>
@@ -53,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Huge"
+                android:text="@string/huge"
                 android:id="@+id/textView7"
                 android:layout_alignTop="@+id/lblEntire" android:layout_alignEnd="@+id/npHuge"
                 android:layout_toEndOf="@+id/textView5"/>
@@ -61,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Normal"
+                android:text="@string/normal"
                 android:id="@+id/lblNormal"
                 android:layout_alignTop="@+id/textView7" android:layout_alignStart="@+id/npNormal"
                 android:layout_toStartOf="@+id/lblTiny"/>
@@ -69,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Tiny"
+                android:text="@string/tiny"
                 android:id="@+id/lblTiny"
                 android:layout_below="@+id/textView5" android:layout_alignStart="@+id/npItems"
                 android:layout_alignEnd="@+id/npTiny"/>
@@ -91,7 +86,7 @@
                 android:id="@+id/lblScore"
                 android:layout_marginTop="40dp"
                 android:layout_alignTop="@+id/npPoints" android:layout_centerHorizontal="true"
-                android:textStyle="bold" android:textSize="32dp"/>
+                android:textStyle="bold" android:textSize="32sp"/>
         <NumberPicker
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -105,14 +100,14 @@
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Next"
+                android:text="@string/next"
                 android:id="@+id/btnNext" android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true" android:layout_alignParentEnd="true"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Huge"
+                android:text="@string/huge"
                 android:id="@+id/lblHuge" android:layout_above="@+id/npHuge" android:layout_toStartOf="@+id/lblScore"/>
         <ImageButton
                 android:layout_width="wrap_content"
@@ -122,6 +117,7 @@
                 android:tint="@android:color/holo_blue_dark"
                 android:background="@android:color/transparent" android:layout_alignBottom="@+id/npItems"
                 android:layout_below="@+id/lblScore"
-                android:layout_alignStart="@+id/npHuge" android:layout_alignEnd="@+id/lblNormal"/>
-    </RelativeLayout>
-</FrameLayout>
+                android:layout_alignStart="@+id/npHuge" android:layout_alignEnd="@+id/lblNormal"
+                android:contentDescription="@string/scoringkey"
+        />
+</RelativeLayout>
