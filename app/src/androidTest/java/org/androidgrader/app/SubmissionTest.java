@@ -34,6 +34,18 @@ public class SubmissionTest extends TestCase{
         assertEquals(0.352,  gradingKey.getTinyWorth(),   DELTA);
     }
 
+    public void testGrade() {
+        submission.setPoints(100);
+        submission.setQuestions(50);
+
+        submission.setEntireMistakes(6);
+        submission.setHugeMistakes(7);
+        submission.setNormalMistakes(8);
+        submission.setTinyMistakes(9);
+
+        assertEquals(74.75, submission.grade(), DELTA);
+
+    }
     public void testGetEntireMistakesDefault() {
         assertEquals(0, submission.getEntireMistakes());
     }
