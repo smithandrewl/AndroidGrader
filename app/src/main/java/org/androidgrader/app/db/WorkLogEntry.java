@@ -33,6 +33,6 @@ public class WorkLogEntry {
     public Optional<Date> elapsedTime() {
         Optional<Date> endDate = Optional.ofNullable(end);
 
-        return endDate.map(date -> new Date(date.getTime() - start.getTime()));
+        return endDate.map(date -> date == null ? null : new Date(date.getTime() - start.getTime()));
     }
 }
