@@ -18,4 +18,24 @@
     <string name="tiny">Tiny</string>
     <string name="next">Next</string>
     <string name="scoringkey">Scoring Key</string>
+
+    <string-array name="work_entry_array">
+        <item>Start: Sun Dec 29 21:37 End: Sun Dec 29 21:37</item>
+        <item>Start: Sun Dec 28 21:37 End: Sun Dec 28 21:37</item>
+        <item>Start: Sun Dec 27 21:37 End: Sun Dec 27 21:37</item>
+        <item>Start: Sun Dec 26 21:37 End: Sun Dec 26 21:37</item>
+        <item>Start: Sun Dec 25 21:37 End: Sun Dec 25 21:37</item>
+        <item>Start: Sun Dec 24 21:37 End: Sun Dec 24 21:37</item>
+        <item>Start: Sun Dec 23 21:37 End: Sun Dec 23 21:37</item>
+        <item>Start: Sun Dec 22 21:37 End: Sun Dec 22 21:37</item>
+        <item>Start: Sun Dec 21 21:37 End: Sun Dec 21 21:37</item>
+        <item>Start: Sun Dec 20 21:37 End: Sun Dec 20 21:37</item>
+        <item>Start: Sun Dec 19 21:37 End: Sun Dec 19 21:37</item>
+        <item>Start: Sun Dec 18 21:37 End: Sun Dec 18 21:37</item>
+        <item>Start: Sun Dec 17 21:37 End: Sun Dec 17 21:37</item>
+        <item>Start: Sun Dec 16 21:37 End: Sun Dec 16 21:37</item>
+        <item>Start: Sun Dec 15 21:37 End: Sun Dec 15 21:37</item>
+        <item>Start: Sun Dec 14 21:37 End: Sun Dec 14 21:37</item>
+        <item>Start: Sun Dec 13 21:37 End: Sun Dec 13 21:37</item>
+    </string-array>
 </resources>
