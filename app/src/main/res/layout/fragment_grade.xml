@@ -20,11 +20,13 @@
                 android:id="@+id/lblItems" android:layout_alignTop="@+id/lblPoints" android:layout_alignParentEnd="true"
                 android:layout_marginEnd="26dp" android:layout_toEndOf="@+id/textView5"/>
         <NumberPicker
+                android:descendantFocusability="blocksDescendants"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/npPoints"
                 android:layout_below="@+id/lblPoints" android:layout_alignStart="@+id/lblPoints"/>
         <NumberPicker
+                android:descendantFocusability="blocksDescendants"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/npItems" android:layout_alignTop="@+id/npPoints"
@@ -69,11 +71,13 @@
                 android:layout_below="@+id/textView5" android:layout_alignStart="@+id/npItems"
                 android:layout_alignEnd="@+id/npTiny"/>
         <NumberPicker
+                android:descendantFocusability="blocksDescendants"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/npHuge"
                 android:layout_below="@+id/textView7" android:layout_toEndOf="@+id/npPoints"/>
         <NumberPicker
+                android:descendantFocusability="blocksDescendants"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/npTiny"
@@ -88,11 +92,13 @@
                 android:layout_alignTop="@+id/npPoints" android:layout_centerHorizontal="true"
                 android:textStyle="bold" android:textSize="32sp"/>
         <NumberPicker
+                android:descendantFocusability="blocksDescendants"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/npEntire"
                 android:layout_alignTop="@+id/npHuge" android:layout_alignStart="@+id/lblEntire"/>
         <NumberPicker
+                android:descendantFocusability="blocksDescendants"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/npNormal"
