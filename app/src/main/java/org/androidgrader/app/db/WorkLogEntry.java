@@ -2,7 +2,7 @@ package org.androidgrader.app.db;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
-import org.androidgrader.app.util.Optional;
+import java8.util.Optional;
 
 import java.util.Date;
 
@@ -11,7 +11,7 @@ public class WorkLogEntry {
     @DatabaseField(canBeNull = false, unique = true)
     Date start;
 
-    @DatabaseField(unique = true)
+    @DatabaseField(unique=true)
     Date end;
 
     public Date getStart() {
@@ -23,7 +23,7 @@ public class WorkLogEntry {
     }
 
     public Optional<Date> getEnd() {
-        return Optional.of(end);
+        return Optional.ofNullable(end);
     }
 
     public void setEnd(Date end) {
@@ -31,8 +31,8 @@ public class WorkLogEntry {
     }
 
     public Optional<Date> elapsedTime() {
-        if(end == null) return Optional.empty();
+        Optional<Date> endDate = Optional.ofNullable(end);
 
-        return Optional.of(new Date(end.getTime() - start.getTime()));
+        return endDate.map(date -> new Date(date.getTime() - start.getTime()));
     }
 }
