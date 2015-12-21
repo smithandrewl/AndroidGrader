@@ -5,10 +5,37 @@
     <string name="title_section2">Hours</string>
     <string name="title_section3">Tags</string>
 
-    <string name="hello_world">Hello world!</string>
-
     <string name="action_settings">Settings</string>
 
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hours">Hours</string>
+    <string name="tags">Tags</string>
+    <string name="points">Points:</string>
+    <string name="items">Items:</string>
+    <string name="mistakes">#Mistakes:</string>
+    <string name="entire">Entire</string>
+    <string name="huge">Huge</string>
+    <string name="normal">Normal</string>
+    <string name="tiny">Tiny</string>
+    <string name="next">Next</string>
+    <string name="scoringkey">Scoring Key</string>
+
+    <string-array name="work_entry_array">
+        <item>Start: Sun Dec 29 21:37 End: Sun Dec 29 21:37</item>
+        <item>Start: Sun Dec 28 21:37 End: Sun Dec 28 21:37</item>
+        <item>Start: Sun Dec 27 21:37 End: Sun Dec 27 21:37</item>
+        <item>Start: Sun Dec 26 21:37 End: Sun Dec 26 21:37</item>
+        <item>Start: Sun Dec 25 21:37 End: Sun Dec 25 21:37</item>
+        <item>Start: Sun Dec 24 21:37 End: Sun Dec 24 21:37</item>
+        <item>Start: Sun Dec 23 21:37 End: Sun Dec 23 21:37</item>
+        <item>Start: Sun Dec 22 21:37 End: Sun Dec 22 21:37</item>
+        <item>Start: Sun Dec 21 21:37 End: Sun Dec 21 21:37</item>
+        <item>Start: Sun Dec 20 21:37 End: Sun Dec 20 21:37</item>
+        <item>Start: Sun Dec 19 21:37 End: Sun Dec 19 21:37</item>
+        <item>Start: Sun Dec 18 21:37 End: Sun Dec 18 21:37</item>
+        <item>Start: Sun Dec 17 21:37 End: Sun Dec 17 21:37</item>
+        <item>Start: Sun Dec 16 21:37 End: Sun Dec 16 21:37</item>
+        <item>Start: Sun Dec 15 21:37 End: Sun Dec 15 21:37</item>
+        <item>Start: Sun Dec 14 21:37 End: Sun Dec 14 21:37</item>
+        <item>Start: Sun Dec 13 21:37 End: Sun Dec 13 21:37</item>
+    </string-array>
 </resources>

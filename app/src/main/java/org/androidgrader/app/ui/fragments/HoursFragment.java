@@ -3,14 +3,20 @@ package org.androidgrader.app.ui.fragments;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.j256.ormlite.dao.Dao;
 import org.androidgrader.app.R;
+import org.androidgrader.app.db.DatabaseHelper;
+import org.androidgrader.app.db.OrmLiteBaseFragment;
+import org.androidgrader.app.db.WorkLogEntry;
 
-public class HoursFragment extends Fragment {
+import java.sql.SQLException;
+
+public class HoursFragment extends OrmLiteBaseFragment{
     private OnFragmentInteractionListener mListener;
+    private Dao<WorkLogEntry, ?> workLogEntryDAO;
 
     public static HoursFragment newInstance() {
         HoursFragment fragment = new HoursFragment();
@@ -25,6 +31,12 @@ public class HoursFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        try {
+            workLogEntryDAO = getHelper().getDao(WorkLogEntry.class);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
